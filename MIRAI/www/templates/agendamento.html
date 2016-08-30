@@ -1,0 +1,51 @@
+<ion-view view-title="Agendamento">
+<ion-content>
+
+<div class="list card">
+  <label class="item item-input item-select" ng-init="option = 2">
+    <div class="input-label">
+      Agendar
+    </div>
+    <select ng-model="option">
+      <option value="1">Consulta</option>
+      <option value="2" >Exame</option>
+    </select>
+  </label>
+</div>
+
+<div class="list card" >
+  <label class="item item-input item-select" ng-init="option = 2">
+    <div class="input-label">
+      Especialista
+    </div>
+    <select ng-model="option">
+      <option value="1">Cardiologista</option>
+      <option value="2">Pediatria</option>
+      <option value="3">Ottorino</option>
+      <option value="4">Dentista</option>
+    </select>
+  </label>
+  <div class="list card">
+    <div class="input-label">
+      <input placeholder="Ano" type="number" min="1" style="float: right; width:45px"></input>
+      <input placeholder="Mes" type="number" min="1" max="12"  style="float: right; width:45px"></input>
+      <input placeholder="Dia" type="number" min="1" max="31" style="float: right; width:45px"></input>
+    </div>
+  
+    <div class="input-label">
+      <input placeholder="Minuto" type="number" min="1" style="float: right; width:65px"></input>
+      <input placeholder="Horas" type="number" min="1" style="float: right; width:65px"></input>
+    </div>
+  </div>
+  <div class="listcard">
+    <div style="padding: 10px">
+      <a class="button button-block login shadow"
+      href="#/tab/home"
+      style="border-radius: 0">
+      Agendar
+    </a>
+  </div>
+</div>
+
+</ion-content>
+</ion-view>

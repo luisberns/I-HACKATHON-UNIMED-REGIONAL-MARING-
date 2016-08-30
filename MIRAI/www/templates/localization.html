@@ -1,0 +1,46 @@
+<ion-view>
+  <ion-content ng-controller="StartCtrl">
+    <div class="bar bar-header">
+      <h1 class="title">
+        <i class="icon ion-android-map"></i>
+        Localizar unidades
+      </h1>
+      <button class="button button-icon icon ion-android-locate"></button>
+    </div>
+
+    <!-- Selects -->
+    <div class="localization">
+      <div class="list shadow">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Estado
+          </div>
+          <select>
+            <option>Pernambuco</option>
+            <option selected>Paraná</option>
+            <option>Tocantins</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Cidade
+          </div>
+          <select>
+            <option>Sarandi</option>
+            <option selected>Maringá</option>
+            <option>Londrina</option>
+          </select>
+        </label>
+      </div>
+      <div class="map-content">
+        <img src="img/mapa-unimed.jpg"
+        style="margin-left: -120px;" class="shadow">
+      </div>
+      <a class="button button-full"
+        href="#/start">
+        Voltar
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
