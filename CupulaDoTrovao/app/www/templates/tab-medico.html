@@ -1,0 +1,30 @@
+<ion-view view-title="Dados do Médico" hide-nav-bar="true">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-body">
+                <button ng-click="ctrl.voltar()" class="button icon-left ion-chevron-left button-clear button-positive"></button>
+                <button class="button button-positive" ng-click="ctrl.pedirConsulta()">
+                    Pedir Consulta
+                </button>
+            </div>
+            <div class="item">                
+                <h2>{{ ctrl.medico.nome }}</h2>
+                 <span class="nota-medico"><rating ng-model="ctrl.medico.nota" max="ctrl.notaMaxima" readonly="ctrl.readOnly"></rating></span>
+            </div>
+
+            <div class="item item-body">
+                <h2>
+                    {{ ctrl.medico.especialidade }}<br />
+                    {{ ctrl.medico.telefone }}
+                </h2>               
+                
+                <h2>Recomendações:</h2>
+                <div class="recomendacoes" ng-repeat="item in ctrl.medico.recomendacoes">
+                    <span class="nome-recomendacao">{{ item.nome }}</span><br />
+                    {{ item.texto }}
+                    <span class="nota-medico"><rating ng-model="item.nota" max="ctrl.notaMaxima" readonly="ctrl.readOnly"></rating></span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view title="Agenda" hide-nav-bar="true">
+	<button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+	<ion-content class="agenda">
+		<div class="row filtro">
+			<div class="col col-20"></div>
+			<div class="col">
+				<select ng-model="mes"  ng-options="item as item.label for item in meses track by item.key" ng-change="change(mes)">
+				</select>
+			</div>
+		</div>
+		<div ng-repeat="(dia, eventos) in dias">
+			<div class="row">
+				<div class="col col-20">
+					<h1 class="dia">{{dia}}</h1>
+					<h2 class="semana">{{eventos[0].data | amDateFormat:'ddd'}}</h2>
+				</div>
+				<div class="col" ng-repeat="evento in eventos">
+					<div class="item-agenda button-{{evento.cor}}">
+						<p class="evento">{{evento.nome}}</p>
+						<p class="horario">{{evento.data | amDateFormat:'H:mm'}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
