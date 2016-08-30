@@ -1,0 +1,15 @@
+<ion-view hide-nav-bar="true">
+	<button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+	<ion-content class="faturas">
+		<div ng-repeat="fat in faturas" ng-click="abrirFatura(fat)">
+			<div class="row">
+				<div class="col col-30">
+					<h1 class="dia">{{fat.mes}}</h1>
+				</div>
+				<div class="col">
+					<h1 class="faturafechada">{{'R$ ' + fat.total.toLocaleString('pt-br')}}</h2>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Inicio" hide-nav-bar="true">
+	<button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+	<ion-content class="padding">
+		<div class="fatura-futuro">
+			<h2 class="balanced">Próxima Fatura</h2> 
+			<h1>{{faturas[0].total| currency:'R$ ' }}</h1>
+		</div>
+		<div class="fatura-atual">
+			<h2 class="balanced">Fatura atual</h2>
+			<h1>{{faturas[1].total | currency:'R$ ' }}</h1>
+			<a class="button button-small button-balanced" ng-click="pagar()">Pagar</a>
+		</div>  
+		<div class="eventos-proximos">
+			<div>
+				<h3 class="balanced">{{evento[0].nome}}</h3>
+				<p><span style="margin-right:20px">{{evento[0].data | amDateFormat:'DD/MM'}}</span><span>{{evento[0].data | amDateFormat:'HH:mm'}}</span></p>            
+			</div>
+			<div>
+				<a href="#/tab/agenda"	class="balanced">{{totaleventos}} evento(s) ainda este mês.</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

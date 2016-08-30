@@ -1,0 +1,18 @@
+<ion-view view-title="Guia de Médicos" hide-nav-bar="true">
+  <button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+  <ion-content>
+    <label class="item item-input">
+      <i class="margin-left-60 icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Nome, endereço, telefone, especialidade..." ng-model="ctrl.pesquisa" ng-change="ctrl.pesquisando(ctrl.pesquisa)">
+    </label>
+    <br/>
+    <div class="list" ng-repeat="item in ctrl.lista track by item.id">
+      <a class="item" href="" ng-click="ctrl.carregarMedico(item.id)">
+        <span class="nome-medico">{{ item.nome }}</span><br/>
+        <span class="especialidade-medico">{{ item.especialidade }}</span><br/>
+        <span class="nota-medico"><rating ng-model="item.nota" max="ctrl.notaMaxima" readonly="ctrl.readOnly"></rating></span>
+        <span class="recomendacoes-medico">{{ item.recomendacoes.length > 0 ? item.recomendacoes.length : 0 }} recomendações</span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
