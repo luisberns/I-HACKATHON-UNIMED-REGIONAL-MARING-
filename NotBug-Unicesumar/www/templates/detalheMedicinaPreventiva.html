@@ -1,0 +1,180 @@
+<style type="text/css">
+    @charset "UTF-8";
+/* Estilo das estrelas quando elas estão "ativadas" checked */
+.radio-1:checked ~ .star-item-1:before,
+.radio-1:focus ~ .star-item-1:before, .radio-2:checked ~ .star-item-1:before,
+.radio-2:focus ~ .star-item-1:before, .radio-2:checked ~ .star-item-2:before,
+.radio-2:focus ~ .star-item-2:before, .radio-3:checked ~ .star-item-1:before,
+.radio-3:focus ~ .star-item-1:before, .radio-3:checked ~ .star-item-2:before,
+.radio-3:focus ~ .star-item-2:before, .radio-3:checked ~ .star-item-3:before,
+.radio-3:focus ~ .star-item-3:before, .radio-4:checked ~ .star-item-1:before,
+.radio-4:focus ~ .star-item-1:before, .radio-4:checked ~ .star-item-2:before,
+.radio-4:focus ~ .star-item-2:before, .radio-4:checked ~ .star-item-3:before,
+.radio-4:focus ~ .star-item-3:before, .radio-4:checked ~ .star-item-4:before,
+.radio-4:focus ~ .star-item-4:before, .radio-5:checked ~ .star-item-1:before,
+.radio-5:focus ~ .star-item-1:before, .radio-5:checked ~ .star-item-2:before,
+.radio-5:focus ~ .star-item-2:before, .radio-5:checked ~ .star-item-3:before,
+.radio-5:focus ~ .star-item-3:before, .radio-5:checked ~ .star-item-4:before,
+.radio-5:focus ~ .star-item-4:before, .radio-5:checked ~ .star-item-5:before,
+.radio-5:focus ~ .star-item-5:before, .star-item:hover:before, .star:hover .star-item:before {
+  color: #FFE000;
+}
+
+/* Estilo das estrelas quando elas estão "desativadas" unchecked */
+.star-item:before, .star-item:hover ~ .star-item:before {
+  color: #CCC;
+}
+
+/*
+  Esconde o texto de elementos
+  source https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+*/
+.star-item {
+  font: "0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/*
+  Esconde um elemento de forma que continue acessível via teclado
+  http://getbootstrap.com/css/#helper-classes-screen-readers
+*/
+.radio {
+  position: absolute;
+  top: -999999em;
+  left: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/*
+  Escreve os seletores das estrelas para marcalas como "ativas" checked, quando um input radio 3 está "ativo" checked, as estrelas 3, 2 e 1 devem aparecer "ativas", esse loop escreve essas classes para nós.
+*/
+.star {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  pointer-events: none;
+  /* max-width: 5em; */
+}
+
+.star-item {
+  cursor: pointer;
+  display: inline-block;
+  pointer-events: initial;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  line-height: 100%;
+  /* Estilo padrão das estrelas */
+  /* Ao passar o mouse em uma estrela, essa estrela fica amarela */
+  /* Ao passar o mouse em uma estrella, as estrelas adjacentes ficam como unchecked (Isso é um truque para não precisar mudar a ordem de disposição dos elementos para rtl) */
+}
+.star-item:before {
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  will-change: color;
+  content: '\2605';
+}
+
+/* Ao passar o mouse no container das estrelas, todos os itens ficam como marcados */
+/* Esconde os input radio de forma que continuem acessíveis via teclado */
+/* Ordena os itens da direita para a esquerda */
+.star:dir(rtl) .star-item, .star.rtl .star-item {
+  direction: rtl;
+}
+
+</style>
+
+<ion-view view-title="Medicina Preventiva">
+    <ion-content>
+
+    <div class="row">
+    	<h3 style="color:{{ recuperarPrograma().cor  }}">{{ recuperarPrograma().titulo }}</h3>
+    </div>
+
+    <div class="row">
+    	<p align='Justify'>{{ recuperarPrograma().descricaoLonga }}</p>
+    </div>
+
+    <div class="row" style="height: 20px">
+    	<p>{{ recuperarPrograma().telefone }}</p>
+        <p><b>+ Próximos</b></p>
+    </div>
+    <hr>
+    <div>
+        
+        <div class="row" ng-click="clickUsuario()"> 
+          <a class="item item-thumbnail-left" href="">
+            <img src="../img/medico1.png">
+            <h2>Dr. Pedro Paulo</h2>
+            <p>CRM-PR 00-000.</p>
+            <p>Pediatra.</p>
+            <p>Avaliação: Excelente.</p>
+          </a>
+        </div>
+
+        <div class="row" ng-click="clickUsuario()"> 
+          <a class="item item-thumbnail-left" href="">
+            <img src="../img/medica1.png">
+            <h2>Dra. Maria</h2>
+            <p>CRM-PR 00-000.</p>
+            <p>Pediatra.</p>
+            <p>Avaliação: Excelente.</p>
+          </a>
+        </div>
+    </div>
+
+    <div class="row" style="height: 30px">
+        <p><b>Recomendados</b></p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label class="item item-input" style="width: 265px">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Pesquisar" ng-model="pesquisa">
+        </label>
+        
+        <div ng-show="choice">
+        <button class="button button-full button-balanced" ng-click="buscarMedicos()">
+          Buscar médicos
+        </button>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row" > 
+
+          <a class="item item-thumbnail-left" href="">
+
+            <img src="../img/medica2.png">
+            <input name="rating2" id="star2-1" value="1" type="radio" class="radio radio-1" ng-click="blank;"/>
+            <input name="rating2" id="star2-2" value="2" type="radio" class="radio radio-2"/>
+            <input name="rating2" id="star2-3" value="3" type="radio" class="radio radio-3"/>
+            <input name="rating2" id="star2-4" value="4" type="radio" class="radio radio-4"/>
+            <input name="rating2" id="star2-5" value="5" type="radio" class="radio radio-5"/>
+            <label for="star2-1" class="star-item star-item-1">1 stars</label>
+            <label for="star2-2" class="star-item star-item-2">2 stars</label>
+            <label for="star2-3" class="star-item star-item-3">3 stars</label>
+            <label for="star2-4" class="star-item star-item-4">4 stars</label>
+            <label for="star2-5" class="star-item star-item-5">5 stars</label>
+            <h2>Dra. Ana</h2>
+            <p>CRM-PR 00-000.</p>
+            <p>Pediatra.</p>
+            <p>Avaliação: Boa.</p>
+           
+          </a>
+
+        </div>
+    </div> 
+
+
+    </ion-content>
+</ion-view>

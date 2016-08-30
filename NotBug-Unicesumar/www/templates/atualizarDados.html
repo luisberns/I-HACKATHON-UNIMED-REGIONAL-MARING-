@@ -1,0 +1,64 @@
+<ion-view view-title="Atualizar Dados">
+  <ion-content>
+    <div class="row"> 
+      <div class="col-90">
+        <div class="list">
+          <a class="item item-icon-left" href="" ng-click="email()">
+            <i class="icon ion-at"></i>
+            E-mail
+          </a>
+            <label ng-show="labelEmail" class="item item-input item-stacked-label">
+                <input ng-model="usuario.email" type="text" placeholder="E-mail">
+            </label>
+          <hr>
+          <a class="item item-icon-left" href="" ng-click="telefone()">
+            <i class="icon ion-android-call"></i>
+            Telefone
+          </a>
+            <label ng-show="labelTelefone" class="item item-input item-stacked-label">
+              <input ng-model="usuario.telefone" type="text" placeholder="Telefone">
+            </label>
+          <hr>
+          <a class="item item-icon-left" href="" ng-click="endereco()">
+            <i class="icon ion-home"></i>
+            Endereço
+          </a>
+            <div ng-show="labelEndereco">
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Estado</span>
+                  <input ng-model="usuario.estado" type="text" placeholder="Estado">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Cidade</span>
+                  <input ng-model="usuario.cidade" type="text" placeholder="Cidade">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">CEP</span>
+                  <input ng-model="usuario.cep" type="text" placeholder="CEP">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Rua</span>
+                  <input ng-model="usuario.rua" type="text" placeholder="Rua">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Número</span>
+                  <input ng-model="usuario.numero" type="text" placeholder="Número">
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Complemento</span>
+                  <input ng-model="usuario.complemento" type="text" placeholder="Complemento">
+              </label>
+            </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      
+      <button ng-click="salvar()" class="button button-full button-balanced">
+        Salvar
+      </button>
+    </div>
+  </ion-content>
+ 
+</ion-view>

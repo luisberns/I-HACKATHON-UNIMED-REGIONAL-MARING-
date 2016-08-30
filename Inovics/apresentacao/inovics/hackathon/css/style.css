@@ -1,0 +1,463 @@
+
+body, html{
+  height: 100%;
+}
+
+.logo{
+  cursor: pointer;
+}
+#main_container {
+  background-image: url(../img/bg_login2.jpg);
+  height: 100%;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+header{
+  text-align: center;
+  background: #069a5e;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
+header h2{
+  display: inline;
+  color: #fff;
+  line-height: 62px;
+  font-weight: bold;
+}
+
+header ul li{
+  float: left;
+  list-style: none;
+}
+header ul li a{
+  color: #fff;
+  text-decoration: none !important;
+  padding: 12px;
+
+}
+header ul li a:hover{
+  color: #069a5e;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.menu-bar{
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  line-height: 75px;
+  color: #fff;
+  cursor: pointer;
+}
+.menu-bar .col-xs-12 .col-xs-9 .col-xs-3{
+  padding: 0;
+}
+.menu-user{
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  background: #333;
+  height: 100%;
+  left: -25%;
+  bottom: 0;
+  color: #fff;
+  transition: all 0.5s;
+  opacity: 0;
+
+}
+
+.menuShow{
+  left: 0;
+  opacity: 1;
+  z-index: 99999;
+  transition: all 0.5s;
+}
+
+.close-menu{
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.close-menu:hover{
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}
+
+.menuHide{
+  left: -25%;
+  transition: all 0.5s;
+}
+
+.menu-user .col-md-12{
+  padding: 0;
+}
+.opcoes-user{
+  padding: 0;
+  margin-left: -15px;
+}
+.opcoes-user li{
+  color: #fff;
+  list-style: none;
+  font-size: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #565151;
+  border-top: 1px solid #565151;
+  cursor: pointer;
+}
+
+.opcoes-user li:hover{
+  background: #504848;
+  border-left: 4px solid #069a5e;
+}
+.opcoes-user li i{
+  padding-left: 15px;
+  padding-right: 5px;
+}
+.user{
+  line-height: 69px;
+  color: #fff;
+}
+.user img{
+  width: 50px;
+  height: 50px;
+  display: inline;
+  cursor: pointer;
+
+}
+.user h4{
+  display: inline;
+  font-weight: 900;
+  cursor: pointer;
+
+}
+.container-form{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.container-form form{
+  background: #069a5e;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.menu li{
+  font-size: 15px;
+  line-height: 62px;
+  padding: 0 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.social li{
+  float: left;
+  color: #fff;
+  font-size: 25px;
+  list-style: none;
+  padding: 0px 3px;
+  line-height: 2.5;
+  margin-right: 5px;}
+
+
+.buttons button{
+  width: 49%;
+}
+.especialidades{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+  background: #20737b;
+  padding: 10px 0;
+  color: #fff;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.especialidades:hover{
+  background: #17373a;
+}
+
+.title h2{
+  color: #20737b;
+}
+
+.title h3{
+  color: #17373a;
+}
+
+.modal-body{
+  display: inline-block;
+  width: 100%;
+}
+.modal-container{
+  text-align: center;
+}
+.modal-container .col-md-6{
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  height: 128px;
+}
+.modal-container .cuidar{
+  background: #069a5e;
+  padding: 15px;
+
+}
+.modal-container .col-md-6:hover .fa-heartbeat{
+  animation: heart 0.8s linear forwards infinite;
+}
+.modal-container .col-md-6:hover .fa-check-square{
+  transform: scale(1.3);
+  transition: all 0.8s;
+}
+.modal-header{
+  text-align: center;
+  background: rgb(0, 161, 255);
+  color: #fff;
+}
+.modal-container .escolher{
+  background: #20737b;
+  padding: 15px;
+}
+.modal2-body{
+  display: inline-block;
+  width: 100%;
+  height: 210px;
+}
+.filter-form input{
+  padding-left: 35px;
+  border-radius: 15px;
+  border-color: rgb(171, 162, 162);
+}
+
+.filter-form i{
+  position: absolute;
+  top: 6px;
+  left: 22px;
+  font-size: 20px;
+}
+
+.pagination{
+  text-align: center;
+  margin-top: 30px;
+
+}
+.plano-cuidar{
+  text-align: center;
+}
+.plano-cuidar .fa-heartbeat{
+  font-size: 17em;
+  color: #fd272e;
+}
+.pagination>.active>a{
+  background-color: #42bdca !important;
+  border-color: #42bdca !important;
+}
+
+.periodo .col-md-6 h4{
+  background: #17373a;
+  color: #fff;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.periodo .col-md-6 h4:hover{
+  background: #447c82;
+}
+.pagina-top{
+  margin-top: 90px;
+}
+.medicos-container{
+  background: #17373a;
+  margin-bottom: 30px;
+  padding: 15px 0;
+  color: #fff;
+}
+.medicos-container h3{
+  margin-top: -9px;
+}
+.medicos-img img{
+  width: 150px;
+  height: 150px;
+}
+
+.hide-list{
+  display: none;
+}
+.list-users {
+  border: 1px solid;
+  border-color: #ccc;
+}
+.list-users h3{
+  display: inline;
+}
+
+.footer-list{
+  background: #069a5e;
+  color: #fff;
+}
+.alert-sucesso{
+  background: #f0ad4e;
+  position: absolute;
+  z-index: 99999;
+  padding: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-alert, .dias-container{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  z-index: 9999;
+
+}
+
+.dias-container .modal-body{
+  background: #fff;
+  top: 50%;
+  transform: translateY(50%);
+}
+.footer-list button{
+  margin-top: 10px;
+  color: black;
+  background: #fff;
+}
+
+.list-users .status{
+  background: #f0ad4e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 266px;
+}
+
+.ativo{
+  background: #ccc;
+}
+
+.slogan{
+  padding: 5px;
+  font-weight: bold;
+}
+
+.pendente{
+  background: #e87070 !important;
+}
+.horarios-container{
+  padding: 0;
+}
+.horarios{
+  padding: 10px 0;
+  text-align: center;
+  margin-right: 1px;
+  width: 8.13333333%;
+}
+
+.datas button{
+  border: none;
+  background: #00a1ff;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.mini{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.legenda{
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.livre{
+  background: #4bbf90;
+}
+.ocupado{
+  background: rgba(241, 64, 64, 0.7);
+}
+
+.marcado{
+  background: #FF9800;
+}
+.horarios span{
+  color: #fff;
+  font-weight: bold;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+   }
+  100% {
+    transform: scale(1.3);
+    }
+   }
+
+
+@media screen and (max-width: 1024px){
+  .menu{
+    display: none;
+  }
+  .hide-list{
+    display: block !important;
+  }
+  .logo{
+    padding: 0;
+  }
+  .logo h2{
+    font-size: 27px !important;
+  }
+
+  .social{
+    display: none;
+  }
+
+  .list-users h3{
+    font-size: 20px;
+  }
+  .medicos-img{
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .horarios{
+    width: 16.26666667%;
+    margin-bottom: 5px;
+  }
+  .datas button{
+    margin-bottom: 5px;
+  }
+  .dias-container .modal-body{
+    background: #fff;
+    transform: translateY(8%) !important;
+    overflow: auto;
+    height: 550px;
+  }
+
+
+}
