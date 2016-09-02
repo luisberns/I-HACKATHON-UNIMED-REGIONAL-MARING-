@@ -1,0 +1,31 @@
+<ion-view view-title="Dados do Pocedimento" hide-nav-bar="true">
+    <ion-content>
+    <button ng-click="ctrl.voltar()" class="button icon-left ion-chevron-left button-clear button-positive"></button>
+    
+        <div class="list card">
+
+            <div class="item">
+                <h2>
+                    {{ ctrl.procedimento.nome }} <br />
+                    Valor: {{ ctrl.procedimento.valor | currency:'R$ ' }}
+                </h2>
+            </div>
+
+            <div class="item item-body">
+                <h2>Procedimentos Requeridos:</h2>
+                <div class="row" ng-repeat="item in ctrl.procedimento.requeridos track by item.id">
+                    <div class="col">
+                        {{ item.nome }}
+                    </div>
+                    <div class="col col-33">
+                        {{ item.valor | currency:'R$ ' }}
+                    </div>
+                </div>
+                <h2>
+                    Valor Estimado: {{ ctrl.valorTotal | currency:'R$ ' }}
+                </h2>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

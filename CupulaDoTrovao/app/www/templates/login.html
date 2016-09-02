@@ -1,0 +1,19 @@
+<ion-view title="Vincular Cartão" hide-nav-bar="true">
+	<ion-content>
+		<br/>
+		<h1 class="balanced align-center">UnimedCare</h1>
+		<p class="balanced align-center">O App que ajuda a cuidar de vocês!</p>
+		<form ng-submit="entrar(usuario)" class="list padding">
+			<div class="list">
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Número do Cartão</span>
+					<input type="text" placeholder="Vincular Cartão" name="cartao" ng-model="usuario.cartao">
+				</label>
+			</div>
+			
+			<div class="padding">
+				<button type="submit" class="button button-block button-balanced">Entrar</button>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

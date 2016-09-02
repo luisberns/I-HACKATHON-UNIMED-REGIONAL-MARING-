@@ -1,0 +1,88 @@
+<style type="text/css">
+    .bloco{
+        background-color:#ffaaff;
+    }
+
+    a{
+        text-decoration:none;
+    }
+
+	.conteudo {
+	   margin-bottom: 50%;
+	}
+
+	.imagem{
+		width: 100%;
+		height: 100%;
+	}
+
+	.linhas{
+		border-bottom: solid;
+		border-top: solid;
+		border-color: #ffffff;
+	}
+
+	.container{
+	
+		background-color: #009c63;
+	}
+
+	.inputs{
+	    background: transparent;
+	}
+
+	.divBranca{
+		border-radius:20px;
+		background: #ffffff;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	.button{
+		border: solid;
+		border-width: 1px;
+	}
+
+	.imagemTitulo{
+		height: 100%;
+		width: 100%;
+	}
+
+
+</style>
+
+<ion-view hide-nav-bar="true">
+    <ion-content class="container">
+    <img class="imagemTitulo" src="../img/unimedLogo.png">
+
+    <div class="conteudo col col-60">
+
+		<div class="row row-center">
+			<div class="col col-40 linhas"></div>
+			<div class="col col-20">
+				<img class="imagem" src="../img/logoRound.png">
+	    	</div>
+			<div class="col col-40 linhas"></div>
+		</div>
+
+		<div class="row row-center">
+			<div class="col col-16"></div>
+			<div class="col col-60  divBranca">
+	    		<input class="inputs" type="text" placeholder="Nº Carteira">
+	    		<hr>
+	    		<input class="inputs" type="password" placeholder="Senha">
+	    		<hr>
+	    		</br>
+    			<button ng-click="salvar()" class="button button-block button-stable">Entrar</button>
+    			<button ng-click="solicitar()" class="button button-block button-positive">Solicitar acesso</button>
+	    		</br>
+	    		</br>
+	    	</div>
+	    	<div class="col col-24"></div>
+		</div>
+
+    </div>
+
+    </ion-content>
+
+</ion-view>

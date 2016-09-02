@@ -1,0 +1,39 @@
+<style type="text/css">
+.bloco{
+  background-color:#ffaaff;
+}
+
+a{
+  text-decoration:none;
+}
+.botaoPrincipal{
+  width: 100%;
+}
+</style>
+<ion-view view-title="Duvidas">
+<ion-content>
+<div class="list">
+  <a class="item item-icon-left" href="" ng-click="duvida1()">
+    <strong>Não encontrei o que procurava.</strong>
+</a>
+<div ng-show="labelDuvida1" style="margin-left: 10%; margin-right: 10%">
+    <p style="word-wrap: break-word;">Para mais informações, ligue para <strong>0800 643 0027</strong>.</p>
+</div>
+<hr>
+<a class="item item-icon-left" href="" ng-click="duvida2()">
+    <strong>Não consigo completar 'X' processo.</strong>
+</a>
+<div ng-show="labelDuvida2" style="margin-left: 10%; margin-right: 10%">
+    <p style="word-wrap: break-word;">Todos os processos realizados neste aplcativo, podem ser realizados em todas as unidades <strong>Unimed</strong>.</p>
+</div>
+<hr>
+<a class="item item-icon-left" href="" ng-click="duvida3()">
+    <strong>Outras.</strong>
+</a>
+<div ng-show="labelDuvida3" style="margin-left: 10%; margin-right: 10%">
+    <p style="word-wrap: break-word;">Para mais informações, ligue para <strong>0800 643 0027</strong>. Ou se dirija a unidade <strong>Unimed</strong> mais proxima de você.</p>
+</div>
+<hr>
+</div>
+</ion-content>
+</ion-view>

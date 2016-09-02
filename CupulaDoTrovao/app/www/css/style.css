@@ -1,0 +1,104 @@
+/* Empty. Add your own CSS if you like */
+.faturas{
+    margin-top: 100px;
+    padding-top: 100px;
+}
+.centro-fatura-detalhe{
+    text-align: center;
+    align-content: center;
+}
+.agenda .row .dia, .agenda .row .semana{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.agenda .row .dia{
+    font-size: 22px;
+}
+.agenda .row .semana{
+    font-size: 14px;
+}
+.agenda .row .item-agenda{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 2px;
+}
+.agenda .row .item-agenda .evento, .agenda .row .item-agenda .horario{
+    padding: 0;
+}
+.agenda .row .item-agenda .evento{
+    font-size: 14px;
+}
+.agenda .row .item-agenda .horario{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+}
+.agenda .filtro .ion-calendar{
+    box-shadow: none;
+}
+.agenda select{
+    width: 100%;
+    margin: 13px 0 7px;
+    font-size: 20px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0 rgba(0,0,0,0.2);
+}
+div.list a.item span.nome-medico,
+div.list a.item span.nome-procedimento {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+div.list a.item span.especialidade-medico,
+div.list a.item span.valor-procedimento {
+    font-size: 16px;
+}
+
+div.list a.item span.especialidade-medico {
+    font-size: 14px;
+}
+
+div.list a.item span.nota-medico ul.rating li i,
+div.card div.item-avatar span.nota-medico ul.rating li i{
+    font-size: 22px;
+    color: #0A5491;
+}
+
+div.card div.item-body div.recomendacoes {
+    margin-bottom: 20px;
+}
+
+div.card div.item-body div.recomendacoes span.nome-recomendacao {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+div.card div.item-body div.recomendacoes span.nota-medico ul.rating li i {
+    font-size: 16px;
+    color: #0A5491;
+}
+ion-side-menus .btn-menu{
+    box-shadow: none;
+    width: 100%;
+}
+.fatura-futuro, .fatura-atual, .eventos-proximos{
+    text-align: right;
+    margin-bottom: 40px;
+    
+} 
+div.card h3 {
+    margin-left: 10px;
+}
+
+div.card div.item button.button {
+    margin-bottom: 30px;
+}
+.button.button-fab{
+    top:10px !important;
+    left:10px !important;
+}
+.modalverde h3{margin: 0; padding: 0;}
+.align-center{text-align:center;}
+.align-right{text-align:right;}
+.margin-left-60{margin-left: 60px;}

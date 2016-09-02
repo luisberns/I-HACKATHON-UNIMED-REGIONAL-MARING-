@@ -1,0 +1,55 @@
+<ion-view view-title="Histórico">
+<ion-content>
+
+<div class="list">
+  <label class="item item-input item-select" ng-init="option = 2">
+    <div class="input-label">
+      Filiados
+    </div>
+    <select ng-model="option">
+      <option value="1">Juliany (Esposa)</option>
+      <option value="2" >Mariano Gonçalves (Adm)</option>
+    </select>
+  </label>
+</div>
+
+
+<div class="list card" >
+  <h4 style="text-align: center;">Histórico de consultas</h4>
+  <div class="item item-divider" ng-if="option == 1">
+    03/06/2016
+    <a class="item item-avatar" >
+      <img src="img/juliany.jpg">
+      <h2>Juliany Gonçalves</h2>
+      <span class="badge badge-assertive">13:50</span>
+    </a>
+  </div>
+
+  <div class="item item-divider" ng-if="option == 1">
+    08/06/2016
+    <a class="item item-avatar">
+      <img src="img/juliany.jpg">
+      <h2>Juliany Gonçalves</h2>
+      <span class="badge badge-assertive">15:00</span>
+    </a>
+  </div>
+
+  <div class="item item-divider" ng-if="option == 2">
+    15/08/2016
+    <a class="item item-avatar">
+      <img src="img/mariano.jpg">
+      <h2>Mariano Gonçalves</h2>
+      <span class="badge badge-assertive">14:25</span>
+    </a>
+  </div>
+
+   <div class="item item-divider" ng-if="option == 1">
+    26/06/2016
+    <a class="item item-avatar">
+      <img src="img/juliany.jpg">
+      <h2>Juliany Gonçalves</h2>
+      <span class="badge badge-assertive">10:15</span>
+    </a>
+  </div>
+</ion-content>
+</ion-view>
