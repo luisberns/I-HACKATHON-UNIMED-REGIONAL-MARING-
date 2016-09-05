@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-9">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Faturamento Anual</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        </div>
+      </div>
+      <div class="box-body chart-responsive">
+        <div id="area"></div>
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-lg-3">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Faturamento Mensal</h3>
+
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        </div>
+      </div>
+      <div class="box-body chart-responsive">
+        <div id="line"></div>
+      </div>
+      <!-- /.box-body -->
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <!-- small box -->
+    <div class="small-box bg-green">
+      <div class="inner">
+        <h3>186</h3>
+        <p>Total de atendimento mensal</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-stats-bars"></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <!-- small box -->
+    <div class="small-box bg-yellow">
+      <div class="inner">
+        <h3><sup style="font-size: 20px">R$</sup>94.548,90</h3>
+        <p> Valor do atendimento mensal</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-social-usd"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Listagens de servições</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Serviço</th>
+            <th>Cliente</th>
+            <th>Data</th>
+            <th>valor</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='service in vm.lstService '>
+              <td>{{service.desc}} </td>
+              <td>{{service.cliente}}</td>
+              <td>{{service.data  | date : "dd/MM/yyyy"}}</td>
+              <td>{{service.valor | currency :"R$"}}</td>
+            </tr>
+          </tbody>
+        </table>
+      <!-- /.box-body -->
+    </div>
+  </div>
+</div>

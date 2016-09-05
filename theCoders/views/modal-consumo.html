@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Consumo - {{$ctrl.nome}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+  <div class="box">
+    <!-- <div class="box-header">
+      <h3 class="box-title" ng-bind="$ctrl.nome"></h3>
+    </div> -->
+    <div class="box-body no-padding">
+      <table class="table">
+        <tbody>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>Tipo</th>
+            <th>Local</th>
+            <th>Data e horário</th>
+            <th>Valor</th>
+            <th>Situação</th>
+          </tr>
+          <tr ng-repeat="consumo in $ctrl.consumo | orderBy:id:true">
+            <td ng-bind="consumo.id"></td>
+            <td ng-bind="consumo.nome"></td>
+            <td ng-bind="consumo.local"></td>
+            <td ng-bind="consumo.data"></td>
+            <td>{{consumo.valor | currency: 'R$'}}</td>
+            <td>
+              <span class="label" ng-class="{'label-success': consumo.situacao == 'Concluído', 'label-warning': consumo.situacao == 'Pendente'}">{{consumo.situacao}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="$ctrl.close()">Fechar</button>
+</div>

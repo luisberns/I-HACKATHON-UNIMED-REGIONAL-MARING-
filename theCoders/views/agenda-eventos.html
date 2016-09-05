@@ -1,0 +1,298 @@
+<div class="agenda-eventos">
+  <h1>Agenda de Eventos</h1>
+
+  <div class="aba-topo">
+    <button type="button" class="btn btn-lg bg-blue bt-editado" onclick="trocaa(0)">Próximos Eventos</button>
+    <button type="button" class="btn btn-lg bt-editado" onclick="trocaa(1)">Visão Geral</button>
+  </div>
+
+  <ul class="timeline" id="cont-linhatempo">
+
+    <!-- timeline time label -->
+    <li class="time-label">
+        <span class="bg-green">
+            1 Setembro 2016
+        </span>
+    </li>
+    <!-- /.timeline-label -->
+    <!-- timeline item -->
+    <li>
+        <i class="fa fa-user bg-aqua"></i>
+        <div class="timeline-item">
+            <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+
+            <h3 class="timeline-header"><a href="#">Churrasco dos coolaboradores</a></h3>
+
+            <div class="timeline-body">
+                Neste domingo haverá churrasco cambada...
+            </div>
+
+            <!--<div class="timeline-footer">
+                <a class="btn btn-primary btn-xs">...</a>
+            </div>-->
+        </div>
+    </li>
+    <!-- END timeline item -->
+
+    <!-- timeline time label -->
+    <li class="time-label">
+        <span class="bg-green">
+              10 Setembro 2016
+        </span>
+    </li>
+    <!-- /.timeline-label -->
+    <!-- timeline item -->
+    <li>
+        <i class="fa fa-user bg-aqua"></i>
+        <div class="timeline-item">
+            <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+
+            <h3 class="timeline-header"><a href="#">Festa pra geral</a></h3>
+
+            <div class="timeline-body">
+                Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss.
+                A ordem dos tratores não altera o pão duris
+                Quem num gosti di mum que vai caçá sua turmis! Per aumento de cachacis, eu reclamis.
+                Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss.
+                A ordem dos tratores não altera o pão duris
+                Quem num gosti di mum que vai caçá sua turmis! Per aumento de cachacis, eu reclamis.
+                Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss
+            </div>
+
+            <!--<div class="timeline-footer">
+                <a class="btn btn-primary btn-xs">...</a>
+            </div>-->
+        </div>
+    </li>
+    <!-- END timeline item -->
+
+    <!-- timeline time label -->
+    <li class="time-label" id="data20">
+        <span class="bg-green">
+            20 Setembro 2016
+        </span>
+    </li>
+    <!-- /.timeline-label -->
+
+    <li>
+      <i class="fa fa-user bg-aqua"></i>
+      <div class="timeline-item">
+        <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+
+        <h3 class="timeline-header"><a href="#">Outro Churrasco</a></h3>
+
+        <div class="timeline-body">
+          <img src="http://placehold.it/150x100" alt="..." class="margin">
+          <img src="http://placehold.it/150x100" alt="..." class="margin">
+          <img src="http://placehold.it/150x100" alt="..." class="margin">
+          <img src="http://placehold.it/150x100" alt="..." class="margin">
+          <div style="width:100%">
+          </div>
+          Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss. A ordem dos tratores não altera o pão duris Quem num gosti di mum que vai caçá sua turmis! Per aumento de cachacis, eu reclamis. Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss. A ordem dos tratores não altera o pão duris Quem num gosti di mum que vai caçá sua turmis! Per aumento de cachacis, eu reclamis. Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantiss.AdminLTE
+  10 Setembro 2016
+        </div>
+      </div>
+    </li>
+
+    <!-- END timeline item -->
+    <li>
+      <i class="fa fa-clock-o bg-gray"></i>
+    </li>
+  </ul>
+
+
+  <!--calendario-->
+  <div id="cont-calendario" style="display:none">
+  <div class="box box-primary">
+      <div class="box-body no-padding">
+        <!-- THE CALENDAR -->
+        <div id="calendar" class="fc fc-ltr fc-unthemed">
+          <div class="fc-toolbar"><div class="fc-left">
+            <div class="fc-button-group">
+              <button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left">
+              <span class="fc-icon fc-icon-left-single-arrow"></span></button>
+              <button type="button" class="fc-next-button fc-button fc-state-default fc-corner-right">
+                <span class="fc-icon fc-icon-right-single-arrow"></span></button></div>
+                <button type="button" class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right" style="display:none">today</button></div><div class="fc-right"><div class="fc-button-group"><button type="button" class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active" style="display:none">month</button><button type="button" class="fc-agendaWeek-button fc-button fc-state-default" style="display:none">week</button><button type="button" class="fc-agendaDay-button fc-button fc-state-default fc-corner-right" style="display:none">day</button></div></div><div class="fc-center"><h2>Setembro 2016</h2></div><div class="fc-clear"></div></div><div class="fc-view-container" style=""><div class="fc-view fc-month-view fc-basic-view"><table><thead><tr><td class="fc-widget-header"><div class="fc-row fc-widget-header"><table><thead><tr><th class="fc-day-header fc-widget-header fc-sun">Sun</th><th class="fc-day-header fc-widget-header fc-mon">Mon</th><th class="fc-day-header fc-widget-header fc-tue">Tue</th><th class="fc-day-header fc-widget-header fc-wed">Wed</th><th class="fc-day-header fc-widget-header fc-thu">Thu</th><th class="fc-day-header fc-widget-header fc-fri">Fri</th><th class="fc-day-header fc-widget-header fc-sat">Sat</th></tr></thead></table></div></td></tr></thead><tbody><tr><td class="fc-widget-content"><div class="fc-day-grid-container"><div class="fc-day-grid"><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2016-08-28"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2016-08-29"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2016-08-30"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2016-08-31"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2016-09-01"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2016-09-02"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2016-09-03"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-other-month fc-future" data-date="2016-08-28">28</td><td class="fc-day-number fc-mon fc-other-month fc-future" data-date="2016-08-29">29</td><td class="fc-day-number fc-tue fc-other-month fc-future" data-date="2016-08-30">30</td><td class="fc-day-number fc-wed fc-other-month fc-future" data-date="2016-08-31">31</td><td class="fc-day-number fc-thu fc-future" data-date="2016-09-01">1</td><td class="fc-day-number fc-fri fc-future" data-date="2016-09-02">2</td><td class="fc-day-number fc-sat fc-future" data-date="2016-09-03">3</td></tr></thead><tbody><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable" href="http://google.com/" style="background-color:#3c8dbc;border-color:#3c8dbc"><div class="fc-content"><span class="fc-time">12a</span> <span class="fc-title">Churrasco</span></div></a></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td><td rowspan="2"></td></tr><tr><td class="fc-event-container"><a class="fc-day-grid-event fc-event fc-start fc-end fc-draggable" style="background-color:#00a65a;border-color:#00a65a"><div class="fc-content"><span class="fc-time">7p</span> <span class="fc-title">Birthday Party</span></div></a></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2016-09-04"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2016-09-05"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2016-09-06"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2016-09-07"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2016-09-08"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2016-09-09"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2016-09-10"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2016-09-04">4</td><td class="fc-day-number fc-mon fc-future" data-date="2016-09-05">5</td><td class="fc-day-number fc-tue fc-future" data-date="2016-09-06">6</td><td class="fc-day-number fc-wed fc-future" data-date="2016-09-07">7</td><td class="fc-day-number fc-thu fc-future" data-date="2016-09-08">8</td><td class="fc-day-number fc-fri fc-future" data-date="2016-09-09">9</td><td class="fc-day-number fc-sat fc-future" data-date="2016-09-10">10</td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2016-09-11"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2016-09-12"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2016-09-13"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2016-09-14"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2016-09-15"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2016-09-16"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2016-09-17"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2016-09-11">11</td><td class="fc-day-number fc-mon fc-future" data-date="2016-09-12">12</td><td class="fc-day-number fc-tue fc-future" data-date="2016-09-13">13</td><td class="fc-day-number fc-wed fc-future" data-date="2016-09-14">14</td><td class="fc-day-number fc-thu fc-future" data-date="2016-09-15">15</td><td class="fc-day-number fc-fri fc-future" data-date="2016-09-16">16</td><td class="fc-day-number fc-sat fc-future" data-date="2016-09-17">17</td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2016-09-18"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2016-09-19"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2016-09-20"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2016-09-21"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2016-09-22"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2016-09-23"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2016-09-24"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2016-09-18">18</td><td class="fc-day-number fc-mon fc-future" data-date="2016-09-19">19</td><td class="fc-day-number fc-tue fc-future" data-date="2016-09-20">20</td><td class="fc-day-number fc-wed fc-future" data-date="2016-09-21">21</td><td class="fc-day-number fc-thu fc-future" data-date="2016-09-22">22</td><td class="fc-day-number fc-fri fc-future" data-date="2016-09-23">23</td><td class="fc-day-number fc-sat fc-future" data-date="2016-09-24">24</td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2016-09-25"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2016-09-26"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2016-09-27"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2016-09-28"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2016-09-29"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2016-09-30"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2016-10-01"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-future" data-date="2016-09-25">25</td><td class="fc-day-number fc-mon fc-future" data-date="2016-09-26">26</td><td class="fc-day-number fc-tue fc-future" data-date="2016-09-27">27</td><td class="fc-day-number fc-wed fc-future" data-date="2016-09-28">28</td><td class="fc-day-number fc-thu fc-future" data-date="2016-09-29">29</td><td class="fc-day-number fc-fri fc-future" data-date="2016-09-30">30</td><td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2016-10-01">1</td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 96px;"><div class="fc-bg"><table><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2016-10-02"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2016-10-03"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2016-10-04"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2016-10-05"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2016-10-06"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2016-10-07"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2016-10-08"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-number fc-sun fc-other-month fc-future" data-date="2016-10-02">2</td><td class="fc-day-number fc-mon fc-other-month fc-future" data-date="2016-10-03">3</td><td class="fc-day-number fc-tue fc-other-month fc-future" data-date="2016-10-04">4</td><td class="fc-day-number fc-wed fc-other-month fc-future" data-date="2016-10-05">5</td><td class="fc-day-number fc-thu fc-other-month fc-future" data-date="2016-10-06">6</td><td class="fc-day-number fc-fri fc-other-month fc-future" data-date="2016-10-07">7</td><td class="fc-day-number fc-sat fc-other-month fc-future" data-date="2016-10-08">8</td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+
+      </div>
+      <!-- /.box-body -->
+    </div>
+    </div>
+
+  <script>
+  function trocaa(valor){
+    if(valor == 0){
+      $('#cont-calendario').fadeOut(200);
+      $('#cont-linhatempo').fadeIn(200);
+      $('.bt-editado:eq(0)').addClass('bg-blue');
+      $('.bt-editado:eq(1)').removeClass('bg-blue');
+    }else{
+      $('#cont-linhatempo').fadeOut(200);
+      $('#cont-calendario').fadeIn(200);
+      $('.bt-editado:eq(1)').addClass('bg-blue');
+      $('.bt-editado:eq(0)').removeClass('bg-blue');
+    }
+  }
+
+  $(function () {
+
+
+    /* initialize the external events
+     -----------------------------------------------------------------*/
+    function ini_events(ele) {
+      ele.each(function () {
+
+        // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+        // it doesn't need to have a start or end
+        var eventObject = {
+          title: $.trim($(this).text()) // use the element's text as the event title
+        };
+
+        // store the Event Object in the DOM element so we can get to it later
+        $(this).data('eventObject', eventObject);
+
+        // make the event draggable using jQuery UI
+        $(this).draggable({
+          zIndex: 1070,
+          revert: true, // will cause the event to go back to its
+          revertDuration: 0  //  original position after the drag
+        });
+
+      });
+    }
+
+    ini_events($('#external-events div.external-event'));
+
+    /* initialize the calendar
+     -----------------------------------------------------------------*/
+    //Date for the calendar events (dummy data)
+    var date = new Date();
+    var d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear();
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      buttonText: {
+        today: 'hoje',
+        month: 'mês',
+        week: 'semana',
+        day: 'dia'
+      },
+      //Random default events
+      events: [
+        {
+          title: 'All Day Event',
+          start: new Date(y, m, 1),
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
+        },
+        {
+          title: 'Long Event',
+          start: new Date(y, m, d - 5),
+          end: new Date(y, m, d - 2),
+          backgroundColor: "#f39c12", //yellow
+          borderColor: "#f39c12" //yellow
+        },
+        {
+          title: 'Meeting',
+          start: new Date(y, m, d, 10, 30),
+          allDay: false,
+          backgroundColor: "#0073b7", //Blue
+          borderColor: "#0073b7" //Blue
+        },
+        {
+          title: 'Lunch',
+          start: new Date(y, m, d, 12, 0),
+          end: new Date(y, m, d, 14, 0),
+          allDay: false,
+          backgroundColor: "#00c0ef", //Info (aqua)
+          borderColor: "#00c0ef" //Info (aqua)
+        },
+        {
+          title: 'Churrasco',
+          start: new Date(y, m, d + 1, 19, 0),
+          end: new Date(y, m, d + 1, 22, 30),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+
+
+        {
+          title: 'Click for Google',
+          start: new Date(y, m, 1),
+          end: new Date(y, m, 1),
+          url: '/agenda-eventos/#data20',
+          backgroundColor: "#3c8dbc", //Primary (light-blue)
+          borderColor: "#3c8dbc" //Primary (light-blue)
+        }
+      ],
+      editable: true,
+      droppable: true, // this allows things to be dropped onto the calendar !!!
+      drop: function (date, allDay) { // this function is called when something is dropped
+
+        // retrieve the dropped element's stored Event Object
+        var originalEventObject = $(this).data('eventObject');
+
+        // we need to copy it, so that multiple events don't have a reference to the same object
+        var copiedEventObject = $.extend({}, originalEventObject);
+
+        // assign it the date that was reported
+        copiedEventObject.start = date;
+        copiedEventObject.allDay = allDay;
+        copiedEventObject.backgroundColor = $(this).css("background-color");
+        copiedEventObject.borderColor = $(this).css("border-color");
+
+        // render the event on the calendar
+        // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+        $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+        // is the "remove after drop" checkbox checked?
+        if ($('#drop-remove').is(':checked')) {
+          // if so, remove the element from the "Draggable Events" list
+          $(this).remove();
+        }
+
+      }
+    });
+
+    /* ADDING EVENTS */
+    var currColor = "#3c8dbc"; //Red by default
+    //Color chooser button
+    var colorChooser = $("#color-chooser-btn");
+    $("#color-chooser > li > a").click(function (e) {
+      e.preventDefault();
+      //Save color
+      currColor = $(this).css("color");
+      //Add color effect to button
+      $('#add-new-event').css({"background-color": currColor, "border-color": currColor});
+    });
+    $("#add-new-event").click(function (e) {
+      e.preventDefault();
+      //Get value and make sure it is not null
+      var val = $("#new-event").val();
+      if (val.length == 0) {
+        return;
+      }
+
+      //Create events
+      var event = $("<div />");
+      event.css({"background-color": currColor, "border-color": currColor, "color": "#fff"}).addClass("external-event");
+      event.html(val);
+      $('#external-events').prepend(event);
+
+      //Add draggable funtionality
+      ini_events(event);
+
+      //Remove event from text input
+      $("#new-event").val("");
+    });
+  });
+</script>
+
+</div><!--fim-->
