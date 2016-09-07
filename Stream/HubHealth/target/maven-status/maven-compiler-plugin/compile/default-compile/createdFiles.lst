@@ -1,0 +1,5 @@
+domain/Notification.class
+integration/TwitterService.class
+domain/News.class
+hub/Application.class
+hub/HubController.class
