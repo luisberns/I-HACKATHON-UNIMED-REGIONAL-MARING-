@@ -1,0 +1,30 @@
+<div class="cid">
+  <h1>Tabela CID</h1>
+  <div class="box">
+    <div class="box-body">
+      <div class="input-group input-group">
+        <input type="text" ng-model="filter" class="form-control pull-right" placeholder="Pesquisar uma doença (Código ou descrição)">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table table-bordered table-responsive">
+            <tbody>
+              <tr>
+                <th style="width: 10px">Código</th>
+                <th>Descrição</th>
+              </tr>
+              <tr ng-repeat="cid in vm.cids | filter:filter | limitTo:'30'">
+                <td ng-bind="cid.id"></td>
+                <td ng-bind="cid.descricao"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

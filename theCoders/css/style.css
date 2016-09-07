@@ -1,0 +1,121 @@
+.logo-lg img{
+  width: 100px;
+}
+.reclamacoes-elogios .ion-ios-star{cursor: pointer; margin-left: 5px; margin-right: 5px; color: #ddd}
+.reclamacoes-elogios .ion-ios-star:hover{ color: #ccc;}
+.reclamacoes-elogios .marcada{ color: #000}
+.reclamacoes-elogios .resposta{ width: 100%; margin-bottom: 5px; margin-top: 5px;}
+.alterar-informacoes{ }
+.alterar-informacoes h1{ text-align: left}
+.alterar-informacoes .divFoto{ width:250px; height: 250px; background-image: url("../img/doctor2.jpg"); background-size: cover; background-position: center; border-radius: 300px; display: inline-block; float: none; text-align: center; margin: 10px; overflow: hidden; transition: opacity .3s}
+.alterar-informacoes .divFoto:hover{ opacity: 0.7}
+.alterar-informacoes .divFoto .link{  font-size: 28px; font-weight: 700; color: #000; margin-top: 270px; width: 250px; text-align: center; transition:margin-top .4s }
+.alterar-informacoes .divFoto:hover .link{margin-top: 170px; }
+.alterar-informacoes .divCampos{width: 400px; height: auto; display: inline-block; margin: 10px 10px 10px 30px;}
+.alterar-informacoes .divCampos .campos{ width: 100%; height: 40px; background-color: #fff; border: 1px solid #ccc; border-radius: 2px; padding-left: 2%; font-size: 13px; color: #000; float: left; margin-bottom: 10px;}
+.alterar-informacoes .divCampos .bt-atualizar{ width: 140px; height: 40px; margin-top: 10px; text-align: center; background-color: #00a65a; color: #fff; font-size: 16px; line-height: 35px; float: right; border: 0; transition: opacity .3s}
+.alterar-informacoes .divCampos .bt-atualizar:hover{ opacity: 0.8}
+
+@media (max-width: 1000px) {
+.alterar-informacoes{ text-align: center}
+.alterar-informacoes .divCampos p{ text-align: left}
+}
+@media (max-width: 500px) {
+.alterar-informacoes .divCampos{width: 100%; margin:0;}
+}
+
+.noticias{width: 100%; height: auto; margin-bottom: 50px; float: left}
+.noticias .cada-noticia{ width: 100%; height: 180px; padding: 10px; float: left; background-color: #fff; border-radius: 3px; margin-bottom: 10px; transition: opacity .3s}
+.noticias .cada-noticia:hover{ opacity: 0.8}
+.noticias .cada-noticia .foto-noticia{width: 160px; height: 160px; background-position: center; background-repeat:no-repeat; background-image: url("../img/hackathon.png"); position: relative; float: left;}
+.noticias .cada-noticia .categoria{ font-weight: 700; float:left; font-size: 14px; color: #000; width: calc(100% - 190px); margin-left: 20px;}
+.noticias .cada-noticia .categoria .data{ float: right; color: #666;}
+.noticias .cada-noticia .tit{ font-weight: 700; line-height: 30px; font-size: 23px; float:left; color: #00a65a; width: calc(100% - 190px); margin-left: 20px;}
+.noticias .cada-noticia .desc{ float:left; font-size: 14px; height: 80px; color: #000; width: calc(100% - 190px); margin-left: 20px; overflow: hidden;}
+
+.noticia-single{width: 100%; height: auto; float: left; margin-bottom: 50px}
+.noticia-single .cor{color: #00a65a;}
+.noticia-single .data{font-weight: 700; float:left; font-size: 14px; color: #ccc; margin-top: -15px; width: 100%}
+.noticia-single .desc{font-weight: 700; float:left; margin-top: 10px; margin-bottom: 10px; font-size: 16px; color: #666; width: 100%}
+.noticia-single img{ width: 100%; height: auto; float: left; margin-top: 15px; margin-bottom: 15px;}
+.noticia-single p{ width: 100%; float: left; font-size: 14px; color: #000;}
+
+@media (max-width: 500px) {
+.noticias .cada-noticia{ height: auto}
+.noticias .cada-noticia .foto-noticia{ width: 100%;}
+.noticias .cada-noticia .categoria{ width: 100%; margin-top: 10px; margin-left: 0;}
+.noticias .cada-noticia .tit{ width: 100%; text-align: center; margin-left: 0;}
+.noticias .cada-noticia .desc{ width: 100%; text-align: center; margin-left: 0;}
+}
+
+.agenda-eventos{width: 100%; }
+.agenda-eventos .aba-topo{margin: 20px 0px 20px 0px; position: relative}
+.agenda-eventos .aba-topo .bt-editado{width: 48.5%;}
+
+@media (max-width: 500px) {
+  .agenda-eventos .aba-topo .bt-editado{width: 100%; margin-bottom: 5px}
+}
+
+.reclamacoes-elogios2{}
+.reclamacoes-elogios2 .marcada{color: #F39C12 !important}
+
+.votacao{}
+.votacao .like{font-size:20px; cursor:pointer}
+.votacao .dislike{margin-left: 20px; font-size:20px; cursor:pointer}
+.votacao .linha-votacao{font-size: 20px !important;}
+
+.single-noticias{width: 100%}
+
+
+.carteirinha .foto{
+  margin: auto;
+  width: 100px;
+}
+.carteirinha .pessoa-foto{
+  margin: auto;
+  width: 100px;
+}
+
+.carteirinha .nome{
+  text-align: center;
+}
+.carteirinha h1.title{
+  margin-bottom: 20px;
+}
+.carteirinha .left{
+  display: inline-block;
+  width: 35%;
+  max-width: 174px;
+  font-weight: normal;
+  text-align: left;
+}
+.carteirinha .right{
+  font-weight: bold;
+  display: inline-block;
+  max-width: 350px;
+}
+.carteirinha .plano{
+  margin-bottom: 30px;
+}
+.carteirinha .pessoa{
+  margin-bottom: 50px;
+}
+
+@media (max-width: 500px)
+{
+  .carteirinha .left, .carteirinha .right{
+    width: 100%;
+  }
+}
+
+
+.cid table{
+  display: block;
+  height: 300px;
+  overflow-y: scroll;
+  width: 100%;
+}
+.cid tbody{
+  width: 100%;
+  display: inline-table;
+}

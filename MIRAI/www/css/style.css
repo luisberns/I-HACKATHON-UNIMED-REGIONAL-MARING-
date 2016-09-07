@@ -1,0 +1,58 @@
+#imgLogo{
+	width: 100%;
+
+}
+
+ion-content{
+	background: #51B85F;
+}
+
+.text-inicio{
+	text-align: center;
+	color: #fff;
+}
+
+.menu-tab .tab-item-active{
+	color: #136058 !important;
+}
+
+body {
+  background-color: #136058;
+}
+
+.button.login {
+  background-color: #008B59 !important;
+  color: white;
+}
+
+.start {
+  color: #136058;
+}
+
+.start span {
+  color: black;
+}
+
+.start-content {
+  margin-top: 20px;
+}
+
+.start-content .list.list-inset.start,
+.shadow {
+  box-shadow: -3px 3px 4px 1px rgba(18, 17, 17, 0.87);
+}
+
+.icon-right {
+  float: right !important;
+}
+
+.localization {
+  position: absolute;
+  width: 100%;
+  top: 44px;
+}
+
+.estrato span {
+  float: right !important;
+  font-weight: bold;
+}

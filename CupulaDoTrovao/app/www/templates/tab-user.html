@@ -1,0 +1,54 @@
+<ion-view view-title="Dados da Conta" hide-nav-bar="true">
+    <button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+    <ion-content>
+        <div class="card">
+            <h3 class="align-right">
+                Olá {{ ctrl.end.nome }}
+            </h3>
+            <div class="item item-divider">
+                Precisa de outro cartão?
+            </div>
+            <div class="item item-text-wrap">
+                <button class="button button-clear button-positive" ng-click="ctrl.showConfirm()">Perdir 2ª via</button>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="card">
+            <div class="item item-divider">
+                Caso queira alterar endereço:
+            </div>
+            <div class="item item-text-wrap">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">First Name</span>-->
+                        <input type="text" placeholder="Logradouro" ng-model="ctrl.end.endereco">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">Last Name</span>-->
+                        <input type="text" placeholder="Número" ng-model="ctrl.end.numero">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">Email</span>-->
+                        <input type="text" placeholder="Bairro" ng-model="ctrl.end.bairro">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">Email</span>-->
+                        <input type="text" placeholder="CEP" ng-model="ctrl.end.cep">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">Email</span>-->
+                        <input type="text" placeholder="Cidade" ng-model="ctrl.end.cidade">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <!--<span class="input-label">Email</span>-->
+                        <input type="text" placeholder="Estado" ng-model="ctrl.end.estado">
+                    </label>
+                </div>
+                <button class="button button-small button-assertive" ng-click="ctrl.alterarDados()">Alterar</button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

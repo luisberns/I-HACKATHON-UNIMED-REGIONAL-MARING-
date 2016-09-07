@@ -1,0 +1,41 @@
+<div class="carteirinha">
+  <h1 class="title">Detalhes do Plano </h1>
+  <div class="plano">
+
+      <div class="callout callout-success">
+        <div class="row">
+          <div class="col-ls-6 col-md-6 col-sm-12">
+            <h4><span class="left">Plano Atual:</span> <span class="right">AMBULANCIA + HOSPITAL + ENFERMARIA</span></h4>
+            <h4><span class="left">Valor do Plano:</span> <span class="right">R$ 200,00</span></h4>
+            <h4><span class="left">Qtd. de dependentes:</span> <span class="right">2</span></h4>
+          </div>
+          <div class="col-ls-6 col-md-6 col-sm-12">
+            <h4><span class="left">Abrangencia do Plano:</span> <span class="right">Estadual</span></h4>
+            <h4><span class="left">Rede de Atendimento:</span> <span class="right">ES01 BÁSICO</span></h4>
+            <h4><span class="left">Validade:</span> <span class="right">04/08/2020</span></h4>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12" ng-repeat="pessoa in vm.pessoas">
+      <div class="pessoa" >
+        <div class="foto">
+          <img ng-src="img/{{pessoa.imagem}}" alt="" class="pessoa-foto img-circle"/>
+        </div>
+        <h3 class="nome" ng-bind="pessoa.nome"></h3>
+        <h4 class="nome">{{pessoa.relacionamento}}</h4>
+        <h5 class="nome">Nº {{pessoa.numero}}</h5>
+        <button ng-click="vm.solicitar(pessoa.id, pessoa.nome)" class="btn btn-block btn-success btn-flat" ng-class="{'disabled': pessoa.statusCarteira == 0}">
+          <span ng-if="pessoa.statusCarteira == 1">Solicitar 2ª Via Carteirinha</span>
+          <span ng-if="pessoa.statusCarteira == 0">Solicitado, aguardando produção</span>
+        </button>
+        <button ng-click="vm.detalhes(pessoa.id, pessoa.consumo, pessoa.nome)" class="btn btn-block btn-primary btn-flat">Ver consumo do Plano</button>
+        <button ng-if="pessoa.id != 1" ng-click="vm.remover(pessoa.id, pessoa.nome)" class="btn btn-block btn-danger btn-flat" ng-class="{disabled: pessoa.status == 0}">
+          <span ng-if="pessoa.status == 1">Remover Dependente</span>
+          <span ng-if="pessoa.status == 0">Solicitação de remoção dependente realizada</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

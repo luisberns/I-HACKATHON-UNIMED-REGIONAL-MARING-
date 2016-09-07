@@ -1,0 +1,62 @@
+<!--
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+	<ion-tab title="Inicio" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/inicio">
+		<ion-nav-view name="tab-inicio"></ion-nav-view>
+	</ion-tab>
+	<ion-tab title="Conta" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/user">
+		<ion-nav-view name="tab-user"></ion-nav-view>
+	</ion-tab>
+	<ion-tab title="Faturas" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/faturas">
+		<ion-nav-view name="tab-faturas"></ion-nav-view>
+	</ion-tab>
+	<ion-tab title="Agenda" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/agenda">
+		<ion-nav-view name="tab-agenda"></ion-nav-view>
+	</ion-tab>
+	<ion-tab title="Guia Médicos" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/guiamedicos">
+		<ion-nav-view name="tab-guiamedicos"></ion-nav-view>
+	</ion-tab>
+	<ion-tab title="Procedimentos" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/procedimentos">
+		<ion-nav-view name="tab-procedimentos"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>
+-->
+<ion-side-menus>
+	<ion-pane ion-side-menu-content>
+		<ion-nav-bar>
+			<ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+	</ion-pane>
+
+	<ion-side-menu side="left" class="balanced">
+		<ion-content class="has-header">
+
+			<p class="align-center">
+				<img src="img/logo.png" alt=""/>
+			</p>
+			<ion-list>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-home" nav-clear menu-close href="#/tab/inicio">
+					inicio
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-person" nav-clear menu-close href="#/tab/user">
+					Conta
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-card" nav-clear menu-close href="#/tab/faturas">
+					Faturas
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-calendar" nav-clear menu-close href="#/tab/agenda">
+					Agenda
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-search" nav-clear menu-close href="#/tab/guiamedicos">
+					Guia Médicos
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-clipboard" nav-clear menu-close href="#/tab/procedimentos">
+					Procedimentos
+				</a>
+				<a class="btn-menu button button-full icon-left button-icon icon ion-log-out" nav-clear menu-close href="#/login">
+					Logout
+				</a>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>

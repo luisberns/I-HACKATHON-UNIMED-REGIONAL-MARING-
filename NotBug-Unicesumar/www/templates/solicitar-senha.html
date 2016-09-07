@@ -1,0 +1,57 @@
+<style type="text/css">
+.bloco{
+  background-color:#ffaaff;
+}
+
+.botaoPrincipal{
+  width: 100%;
+}
+.preencher{
+  width: 100%;
+}
+
+.body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+</style>
+
+<ion-view view-title="Unimed">
+<ion-content>
+<br/>
+
+<div class="row">
+  <div class="col col-10"></div>
+  <div class="col col-80">
+    '   Caso deseje solicitar uma senha de acesso, informe o codigo de sua conta, e selecione a opção que você deseja recebe-la.(Será informada para o meio selecionado, de acordo com os dados cadastrados.)' 
+  </div>
+  <div class="col col-10"></div>
+</div> 
+<br/>
+<div class="row"> 
+  <div class="col col-10"></div>
+  <div class="item item-input">
+    <input class="col col-80" type="text" placeholder="Nº Carteira">
+  </div>
+  <div class="col col-10"></div>
+</div>
+</br>
+
+
+<body class="padding" ng-controller="PopupCtrl">
+  <div class="row">
+    <a class="button button-block button-balanced preencher" ng-click="showPopup()">SMS</a>
+  </div>
+  <div class="row">
+    <a class="button button-block button-balanced preencher" ng-click="showPopup()">E-mail</a>
+  </div>
+  <div class="row">
+    <a class="button button-block button-balanced preencher" ng-click="showPopup()">Telefone</a>
+  </div>
+  <script id="popup-template.html" type="text/ng-template">
+  </script>
+</body>
+
+
+
+</ion-content>
+</ion-view>

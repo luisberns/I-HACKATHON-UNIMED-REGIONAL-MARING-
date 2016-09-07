@@ -1,0 +1,15 @@
+<ion-view view-title="Procedimentos" hide-nav-bar="true">
+  <button menu-toggle="left" class="button button-fab button-fab-top-left button-balanced icon ion-navicon-round"></button>
+  <ion-content>
+    <label class="item item-input">
+      <i class="margin-left-60 icon ion-search placeholder-icon"></i>
+      <input type="text" id="pesquisa" placeholder="Digite o nome do procedimento..." ng-model="ctrl.pesquisa" ng-change="ctrl.pesquisando(ctrl.pesquisa)">
+    </label>
+    <div class="list" ng-repeat="item in ctrl.lista track by item.id">
+      <a class="item" href="" ng-click="ctrl.carregarProcedimento(item.id)">
+        <span class="nome-procedimento">{{ item.nome }}</span><br/>
+        <span class="valor-procedimento">Valor: {{ item.valor | currency:'R$ ' }}</span><br/>        
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
