@@ -1,0 +1,65 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/pdf-browser-viewer/pdf-browser-viewer.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="view-instituicao">
+  <template>
+  <style include="shared-styles">
+  	:host {
+        display: block;
+        --paper-tab-ink: var(--app-secondary-color);
+        --paper-tabs-selection-bar-color: var(--app-secondary-color);
+      }
+    </style>
+    <app-header-layout>
+      <app-header fixed condenses effects="waterfall">
+        <app-toolbar>
+          <paper-icon-button menu-icon icon="menu" on-click="_openMenu"></paper-icon-button>
+          <div main-title>
+            Instituição
+          </div>
+        </app-toolbar>
+      </app-header>
+    </app-header-layout>
+    <section>
+        <div>
+          <paper-tabs selected="{{selected}}">
+            <paper-tab>Estatuto</paper-tab>
+            <paper-tab>Código de Conduta</paper-tab>
+          </paper-tabs>
+        </div>
+        <pdf-browser-viewer file="../[[_getName(selected)]].pdf" height="600"></pdf-browser-viewer>
+    </section>
+  </template>
+  <script>
+    (function() {
+        'use strict';
+        var names = ['estatuto', 'codigo_conduta'];
+
+        Polymer({
+          is: 'view-instituicao',
+          properties: {
+              selected: {
+                  type: Number,
+                  value: 0
+              }
+          },
+          _getName: function(index) {
+              return names[index];
+          },
+          _openMenu: function() {
+            this.fire('menu-click');
+          }
+        });
+    }());
+  </script>
+</dom-module>

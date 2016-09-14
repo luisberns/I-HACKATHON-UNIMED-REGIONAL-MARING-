@@ -1,0 +1,282 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-autocomplete/paper-autocomplete.html">
+<link rel="import" href="../bower_components/paper-chip/paper-chip.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="view-transparencia">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      .subhead {
+        @apply(--paper-font-subhead);
+        color: var(--app-secondary-text);
+        margin-bottom: 0.5rem;
+      }
+      .avatar {
+        display: flex;
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--app-primary-color);
+        color: var(--app-white-text);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+      }
+
+      @media (min-width: 40rem) {
+        .grid {
+          flex-direction: row;
+        }
+      }
+
+      .grid .section {
+        width: 100%;
+      }
+      @media (min-width: 40rem) {
+        .grid .section {
+          width: 50%;
+        }
+      }
+
+
+      .grid paper-material {
+        margin: 0;
+      }
+
+      .faturamento {
+        flex-grow: 1;
+        margin: 0;
+        margin-right: 0.5rem;
+      }
+
+      .custos {
+        flex-grow: 1;
+        margin: 0;
+      }
+    </style>
+
+    <app-header-layout>
+      <app-header fixed condenses effects="waterfall">
+        <app-toolbar>
+          <paper-icon-button menu-icon icon="menu" on-click="_openMenu"></paper-icon-button>
+          <div main-title>
+            Transparência
+          </div>
+          <!-- <paper-icon-button icon="star-border"></paper-icon-button> -->
+        </app-toolbar>
+      </app-header>
+      <section>
+        <paper-material elevation="1">
+          <paper-autocomplete id="estabelecimento-input"
+                              label="Filtros"
+                              source="[[filters]]"></paper-autocomplete>
+          <div class="">
+            <paper-chip label="Pronto-Atendimento Maringá" removable>
+              <iron-icon class="icon" icon="maps:place"></iron-icon>
+            </paper-chip>
+            <paper-chip label="Psicologia" removable>
+              <iron-icon class="icon" icon="social:person"></iron-icon>
+            </paper-chip>
+          </div>
+        </paper-material>
+
+        <section class="grid">
+          <div class="section faturamento">
+            <h2 class="subhead">Entrada</h2>
+            <paper-material elevation="1">
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="social:people"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>7.863</span>
+                  <span secondary>Atendimentos</span>
+                </paper-item-body>
+              </paper-icon-item>
+
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="editor:attach-money"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>R$ 1.000.765,90</span>
+                  <span secondary>Faturamento</span>
+                </paper-item-body>
+              </paper-icon-item>
+
+
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="icons:arrow-downward"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>8%</span>
+                  <span secondary>Sinistralidade</span>
+                </paper-item-body>
+              </paper-icon-item>
+            </paper-material>
+          </div>
+
+          <div class="section custos">
+            <h2 class="subhead">Saída</h2>
+            <paper-material elevation="1">
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="work"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>R$ 206.650,45</span>
+                  <span secondary>Administração e Operacional</span>
+                </paper-item-body>
+              </paper-icon-item>
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="editor:attach-money"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>R$ 151.325,18</span>
+                  <span secondary>Financeiro e Contabilidade</span>
+                </paper-item-body>
+              </paper-icon-item>
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="dns"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>R$ 173.035,63</span>
+                  <span secondary>Tecnologia da Informação</span>
+                </paper-item-body>
+              </paper-icon-item>
+              <paper-icon-item>
+                <div class="avatar" item-icon>
+                  <iron-icon icon="question-answer"></iron-icon>
+                </div>
+                <paper-item-body two-line>
+                  <span>R$ 102.547,78</span>
+                  <span secondary>Marketing e Comunidação</span>
+                </paper-item-body>
+              </paper-icon-item>
+            </paper-material>
+          </div>
+
+
+        </section>
+      </section>
+    </app-header-layout>
+
+  </template>
+  <script>
+    (function(Polymer) {
+      'use strict';
+      function localFactory(name, address, city, state, cep, phone) {
+        return {
+          type: 'local',
+          name: name,
+          address: address,
+          city: city,
+          state: state,
+          cep: cep,
+          phone: phone,
+        };
+      }
+
+      function areaFactory(name) {
+        return {
+          type: 'area',
+          name: name
+        };
+      }
+
+      function sectorFactory(name) {
+        return {
+          type: 'sector',
+          name: name
+        };
+      }
+
+      const locals = [
+        localFactory(
+          'Clínica da Saúde', 'Rua Verde, 500',
+          'Maringá', 'Paraná', '87013-400',
+          '(44) 3220-8782'
+        ),
+        localFactory(
+          'Ambulatório 24h', 'Rua São Judas, 3010',
+          'Maringá', 'Paraná', '87013-400',
+          '(44) 3320-7610'
+        ),
+        localFactory(
+          'Clínica da Saúde', 'Rua Verde, 500',
+          'Maringá', 'Paraná', '87013-400',
+          '(44) 3220-8782'
+        ),
+        localFactory(
+          'Bancos de Sangue', 'Rua São Judas, 3010',
+          'Maringá', 'Paraná', '87023-400',
+          '(44) 3320-7610'
+        )
+      ];
+
+      const areas = [
+        areaFactory('Pediatria'),
+        areaFactory('Geriatria'),
+        areaFactory('Psicologia'),
+      ];
+
+      const sectors = [
+        sectorFactory('Diretoria de Tecnologia'),
+        sectorFactory('Diretoria de Integração'),
+        sectorFactory('Diretoria Financeira'),
+        sectorFactory('Diretoria Administrativa'),
+      ]
+
+      const search = [].concat(locals, areas, sectors);
+
+      Polymer({
+        is: 'view-transparencia',
+        properties: {
+          filters: {
+            type: Array,
+            value: function() {
+              return search.map(function (item) {
+                switch (item.type) {
+                  case 'local':
+                    return 'Estabelecimento: ' + item.name;
+                  case 'sector':
+                    return 'Setor: ' + item.name;
+                    break;
+                  case 'area':
+                    return 'Especialidade: ' + item.name;
+                    break;
+                  default:
+                    return "";
+              }
+            });
+          }
+        }
+      },
+      _openMenu: function() {
+        this.fire('menu-click');
+      }
+    });
+    }(Polymer));
+  </script>
+</dom-module>

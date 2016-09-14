@@ -1,0 +1,126 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/google-map/google-map-marker.html">
+
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="bi-map">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+      #map-container {
+        height: 25rem;
+      }
+    </style>
+
+    <section id="map-container">
+      <google-map id="google-map"
+                  api-key="[[apiKey]]"
+                  latitude="-23.4260502"
+                  longitude="-51.9531916"
+                  zoom="13"
+                  libraries="visualization"
+                  disable-zoom
+                  disable-default-ui
+                  fit-to-markers
+                  on-google-map-ready="_mapLoaded">
+      </google-map>
+    </section>
+
+  </template>
+  <script>
+    (function() {
+      'use strict';
+      Polymer({
+        is: 'bi-map',
+        properties: {
+          apiKey: {
+            type: String,
+            value: 'AIzaSyCG9BV2ANLxKLXOaoizQVdCmM7Ol74YlYw'
+          },
+          latitude: {
+            type: Number,
+            value: -23.4260502
+          },
+          longitude: {
+            type: Number,
+            value: -51.9531916
+          },
+          heatMap: Object,
+        },
+
+        _latitudeLongitudeFactory: function(latitude, longitude) {
+          return {
+            latitude: latitude,
+            longitude: longitude
+          };
+        },
+
+        _getLocations: function () {
+          const latitude = this.latitude,
+                longitude = this.longitude,
+                rate = 30,
+                maximum = 15;
+          const locations = [];
+          for (var i = 0; i < maximum; i++) {
+            const delta_latitude = Math.random() / rate,
+                  delta_longitude = Math.random() / rate;
+            switch (i % 4) {
+              case 0:
+                locations.push(
+                  this._latitudeLongitudeFactory(
+                    latitude + delta_latitude,
+                    longitude + delta_longitude
+                  )
+                );
+                break;
+              case 1:
+                locations.push(
+                  this._latitudeLongitudeFactory(
+                    latitude + delta_latitude,
+                    longitude - delta_longitude
+                  )
+                );
+                break;
+              case 2:
+                locations.push(
+                  this._latitudeLongitudeFactory(
+                    latitude - delta_latitude,
+                    longitude + delta_longitude
+                  )
+                );
+                break;
+              case 3:
+                locations.push(
+                  this._latitudeLongitudeFactory(
+                    latitude - delta_latitude,
+                    longitude - delta_longitude
+                  )
+                );
+                break;
+            }
+          }
+
+          return locations;
+        },
+
+        _mapLoaded: function() {
+          const map = this.$['google-map'].map;
+          const locations = this._getLocations();
+          var spotData = locations.map(function (location) {
+            return new google.maps.LatLng(location.latitude, location.longitude);
+          });
+
+          this.heatMap = new google.maps.visualization.HeatmapLayer({
+            data: spotData
+          });
+          this.heatMap.setMap(map);
+          this.heatMap.set('radius', 70);
+        }
+      });
+    })();
+  </script>
+</dom-module>

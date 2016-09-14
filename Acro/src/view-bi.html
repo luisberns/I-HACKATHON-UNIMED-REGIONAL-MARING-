@@ -1,0 +1,230 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/iron-icons/editor-icons.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-autocomplete/paper-autocomplete.html">
+<link rel="import" href="../bower_components/paper-chip/paper-chip.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="bi-map.html">
+<link rel="import" href="bi-history.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="view-bi">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        --paper-tab-ink: var(--app-secondary-color);
+        --paper-tabs-selection-bar-color: var(--app-secondary-color);
+      }
+      .subhead {
+        @apply(--paper-font-subhead);
+      }
+      .avatar {
+        display: flex;
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--app-primary-color);
+        color: var(--app-white-text);
+        align-items: center;
+        justify-content: center;
+      }
+      paper-material {
+        padding: 0;
+      }
+
+      #form-container {
+        padding: 0.5rem;
+      }
+
+    </style>
+
+    <app-header-layout>
+      <app-header fixed condenses effects="waterfall">
+        <app-toolbar>
+          <paper-icon-button menu-icon icon="menu" on-click="_openMenu"></paper-icon-button>
+          <div main-title>
+            Estatísticas
+          </div>
+          <!-- <paper-icon-button icon="star-border"></paper-icon-button> -->
+        </app-toolbar>
+      </app-header>
+      <section>
+        <paper-material elevation="1">
+          <section id="form-container">
+            <paper-autocomplete id="estabelecimento-input"
+                                label="Filtros"
+                                source="[[filters]]"></paper-autocomplete>
+            <div>
+              <paper-chip label="Patologia: Obesidade" removable>
+                <iron-icon class="icon" icon="favorite"></iron-icon>
+              </paper-chip>
+              <paper-chip label="Idade: 5-10" removable>
+                <iron-icon class="icon" icon="supervisor-account"></iron-icon>
+              </paper-chip>
+            </div>
+          </section>
+
+          <div>
+            <paper-tabs selected="{{selected}}"
+                        on-iron-select="_onTabSelect">
+              <paper-tab>Mapa</paper-tab>
+              <paper-tab>Histórico</paper-tab>
+            </paper-tabs>
+          </div>
+          <div>
+            <iron-pages selected="{{selected}}">
+              <section>
+                <bi-map id="map"></bi-map>
+              </section>
+              <section>
+                <bi-history id="history"></bi-history>
+              </section>
+            </iron-pages>
+          </div>
+        </paper-material>
+      </section>
+    </app-header-layout>
+
+  </template>
+  <script>
+  (function(Polymer) {
+    'use strict';
+
+    function localFactory(name, address, city, state, cep, phone) {
+      return {
+        type: 'local',
+        name: name,
+        address: address,
+        city: city,
+        state: state,
+        cep: cep,
+        phone: phone,
+      };
+    }
+
+    function diseaseFactory(name) {
+      return {
+        type: 'dicease',
+        name: name
+      };
+    }
+
+    function areaFactory(name) {
+      return {
+        type: 'area',
+        name: name
+      };
+    }
+
+    function ageFactory(start, end) {
+      return {
+        type: 'age',
+        start: start,
+        end: end
+      };
+    }
+
+    const locals = [
+      localFactory(
+        'Clínica da Saúde', 'Rua Verde, 500',
+        'Maringá', 'Paraná', '87013-400',
+        '(44) 3220-8782'
+      ),
+      localFactory(
+        'Ambulatório 24h', 'Rua São Judas, 3010',
+        'Maringá', 'Paraná', '87013-400',
+        '(44) 3320-7610'
+      ),
+      localFactory(
+        'Clínica da Saúde', 'Rua Verde, 500',
+        'Maringá', 'Paraná', '87013-400',
+        '(44) 3220-8782'
+      ),
+      localFactory(
+        'Bancos de Sangue', 'Rua São Judas, 3010',
+        'Maringá', 'Paraná', '87023-400',
+        '(44) 3320-7610'
+      )
+    ];
+
+    const diceases = [
+      diseaseFactory('H1N1'),
+      diseaseFactory('Diabetes'),
+      diseaseFactory('Alzheimer'),
+      diseaseFactory('Obesidade')
+    ];
+
+    const areas = [
+      areaFactory('Pediatria'),
+      areaFactory('Geriatria'),
+      areaFactory('Psicologia'),
+    ];
+
+    const age = [
+      ageFactory(0, 5),
+      ageFactory(5, 10),
+      ageFactory(10, 20),
+      ageFactory(20, 60),
+      ageFactory(60, 120)
+    ];
+
+    const search = [].concat(locals, diceases, areas, age);
+
+
+    Polymer({
+      is: 'view-bi',
+      properties: {
+        filters: {
+          type: Array,
+          value: function() {
+            return search.map(function (item) {
+              switch (item.type) {
+                case 'local':
+                  return 'Estabelecimento: ' + item.name;
+                case 'dicease':
+                  return 'Patologia: ' + item.name;
+                  break;
+                case 'area':
+                  return 'Especialidade: ' + item.name;
+                  break;
+                case 'age':
+                  return 'Idade: ' +
+                         item.start +
+                         '-' +
+                         item.end;
+                  break;
+                default:
+                  return "";
+              }
+            });
+          }
+        },
+        selected: {
+          type: Number,
+          value: 0
+        }
+      },
+
+      _onTabSelect: function() {
+        if (this.selected == 1) {
+          this.$.history.draw();
+        }
+      },
+
+      _openMenu: function() {
+        this.fire('menu-click');
+      }
+    });
+  }(Polymer));
+  </script>
+</dom-module>

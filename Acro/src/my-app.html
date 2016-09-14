@@ -1,0 +1,222 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="my-icons.html">
+
+<dom-module id="my-app">
+  <template>
+    <style>
+      :host {
+        --app-primary-dark-color: #7B1FA2;
+        --app-primary-color: #9C27B0;
+        --app-primary-light-color: #E1BEE7;
+        --app-secondary-color: #FF5722;
+        --app-primary-text: #212121;
+        --app-secondary-text: #757575;
+        --app-disabled-text: #BDBDBD;
+        --app-white-text: #FFF; 
+
+        display: block;
+      }
+
+      app-header {
+        color: #fff;
+        background-color: var(--app-primary-color);
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: var(--app-white-text);
+      }
+
+      .drawer-list {
+        margin: 0 20px;
+      }
+
+      .drawer-list a {
+        display: block;
+
+        padding: 0 16px;
+
+        text-decoration: none;
+
+        color: var(--app-secondary-color);
+
+        line-height: 40px;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+
+        font-weight: bold;
+      }
+
+      .bio {
+        display: flex;
+        padding: 5rem 1rem 1rem 1rem;
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
+                          url('../images/background.jpg');
+        background-size: cover;
+      }
+      .bio .photo {
+        width: 40px;
+      }
+      .bio .photo img {
+        width: 100%;
+        border-radius: 50%;
+      }
+      .bio .text {
+        flex-grow: 1;
+        margin-left: 0.5rem;
+      }
+      .bio .name {
+        @apply(--paper-font-subhead);
+        color: var(--app-white-text);
+      }
+      .bio .info {
+        @apply(--paper-font-caption);
+        color: var(--app-white-text);
+      }
+      #img-logo {
+          display: block;
+          width: 60%;
+          margin-top: 1rem;
+          margin-left: 1rem;
+      }
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    <app-drawer-layout id="drawer-layout" fullbleed>
+      <!-- Drawer content -->
+      <app-drawer id="drawer">
+        <div class="bio">
+          <div class="photo">
+            <img src="/images/avatar.png" alt="Avatar do médico"/>
+          </div>
+          <div class="text">
+            <div class="name">
+              Gabriela Vieira
+            </div>
+            <div class="info">
+              Neurologista
+            </div>
+          </div>
+        </div>
+        <iron-selector selected="[[page]]"
+                       attr-for-selected="name"
+                       class="drawer-list"
+                       role="navigation"
+                       on-iron-select="_handleSelect">
+          <a name="init" href="/">Início</a>
+          <a name="instituicao" href="/instituicao">Instituição</a>
+          <a name="transparencia" href="/transparencia">Transparência</a>
+          <a name="bi" href="/bi">Estatísticas</a>
+          <img id="img-logo" src="../images/logo2.png" alt="Logo Unimed"/>
+        </iron-selector>
+      </app-drawer>
+
+      <!-- Main content -->
+      <main>
+        <iron-pages selected="[[page]]"
+                    attr-for-selected="name"
+                    fallback-selection="404"
+                    role="main">
+          <view-init
+              name="init"
+              on-menu-click="_handleMenuClick"></view-init>
+          <view-instituicao
+              name="instituicao"
+              on-menu-click="_handleMenuClick"></view-instituicao>
+          <view-transparencia
+              name="transparencia"
+              on-menu-click="_handleMenuClick"></view-transparencia>
+          <view-avaliacoes
+              name="avaliacoes"
+              on-menu-click="_handleMenuClick"></view-avaliacoes>
+          <view-bi
+              name="bi"
+              on-menu-click="_handleMenuClick"></view-bi>
+          <view-404
+              name="404"
+              on-menu-click="_handleMenuClick"></view-404>
+        </iron-pages>
+      </main>
+      <!-- <app-header-layout has-scrolling-region>
+
+        <app-header condenses reveals effects="waterfall">
+          <app-toolbar>
+            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <div main-title>My App</div>
+          </app-toolbar>
+        </app-header>
+      </app-header-layout> -->
+
+    </app-drawer-layout>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        }
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'init';
+      },
+
+      _pageChanged: function(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('view-' + page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _showPage404: function() {
+        this.page = '404';
+      },
+
+      _handleMenuClick: function() {
+        this.$.drawer.open();
+      },
+
+      _handleSelect: function () {
+        const isNarrow = this.$['drawer-layout'].narrow;
+        if (isNarrow) {
+          this.$.drawer.close();
+        }
+      }
+    });
+  </script>
+</dom-module>
